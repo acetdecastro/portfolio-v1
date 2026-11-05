@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #f7f6f2;
+  --foreground: #242422;
+  --muted: #686861;
+  --line: #d9d9d1;
+  --subtle: #ecece5;
+}
+
+.dark {
+  --background: #181918;
+  --foreground: #f0f0e9;
+  --muted: #adada5;
+  --line: #383934;
+  --subtle: #252622;
+}
+
+/* Semantic tokens keep components independent of the active color palette. */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-subtle: var(--subtle);
+  --font-sans: var(--font-inter), Arial, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-padding-top: 2rem;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--foreground);
+    outline-offset: 5px;
+  }
+
+  ::selection {
+    background: var(--foreground);
+    color: var(--background);
+  }
+}
+
+@layer components {
+  .text-link {
+    text-decoration-line: underline;
+    text-decoration-color: var(--line);
+    text-underline-offset: 0.35em;
+    text-decoration-thickness: 1px;
+    transition: text-decoration-color 150ms ease;
+  }
+
+  .text-link:hover {
+    text-decoration-color: currentColor;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .intro-enter {
+    animation: intro-enter 600ms ease-out both;
+  }
+
+  @keyframes intro-enter {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
