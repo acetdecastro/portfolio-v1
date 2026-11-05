@@ -9,10 +9,9 @@ export function SiteHeader() {
       <Container className="flex flex-wrap items-center justify-between gap-x-6 pt-6 sm:pt-8">
         <Link
           href="/"
-          className="inline-flex min-h-11 items-center gap-3 text-base font-semibold tracking-[-0.04em] sm:text-lg"
+          className="inline-flex min-h-11 items-center text-base font-semibold tracking-[-0.04em] sm:text-lg"
           aria-label={`${profile.name}, home`}
         >
-          <span className="size-3 bg-foreground" aria-hidden="true" />
           {profile.name}
         </Link>
 

@@ -39,7 +39,7 @@ export function Hero() {
           className="text-link inline-flex min-h-12 items-center text-sm"
         >
           View résumé
-          <span className="sr-only"> (PDF, opens in a new tab)</span>
+          <span className="sr-only"> (Google Drive, opens in a new tab)</span>
         </a>
       </div>
     </section>

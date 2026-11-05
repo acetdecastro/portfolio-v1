@@ -11,7 +11,7 @@ export const profile = {
     "I build full-stack applications with a focus on performance, clarity, and reliability.",
   about:
     "I'm Ace, a software engineer who enjoys turning complex requirements into dependable products.",
-  resume: "/ace-de-castro-resume.pdf",
+  resume: "https://drive.google.com/file/d/1ps2I-CoStB1tRKfxDDUebPYYNduW5Xhq/view?usp=sharing",
   skills: ["Node.js", "TypeScript", "React", "Kotlin", "PostgreSQL"],
 } as const;
 

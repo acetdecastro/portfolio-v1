@@ -61,7 +61,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <p className="text-xs font-semibold tracking-[0.12em] text-muted uppercase">
             {project.category}
           </p>
-          <h1 className="mt-6 max-w-4xl text-4xl leading-[1.08] font-semibold tracking-[-0.05em] sm:text-6xl lg:text-7xl">
+          <h1 className="mt-6 max-w-4xl text-4xl leading-[1.08] font-semibold tracking-tighter sm:text-6xl lg:text-7xl">
             {project.title}
           </h1>
           <p className="mt-7 max-w-2xl text-xl leading-relaxed tracking-[-0.02em] text-muted sm:text-2xl">
@@ -74,7 +74,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <div className="max-w-2xl">
             <p className="text-lg leading-relaxed text-muted sm:text-xl">{project.overview}</p>
 
-            <h2 className="mt-12 text-lg font-semibold tracking-[-0.025em]">
+            <h2 className="mt-12 text-lg font-semibold tracking-tight">
               Contributions & outcomes
             </h2>
             <ul className="mt-5 space-y-4 text-base leading-relaxed text-muted">

@@ -53,8 +53,6 @@ src/
     site.ts                 Canonical site URL
   types/
     portfolio.ts            Content contracts
-public/
-  ace-de-castro-resume.pdf   Original supplied résumé
 ```
 
 ## Update content
@@ -62,7 +60,7 @@ public/
 - Edit `src/content/profile.ts` to change personal details, navigation, skills, and social links.
 - Edit `src/content/experience.ts` to add or update employment history. Each entry contains only a company, position, and tenure years.
 - Add a `Project` record to `src/content/projects.ts` to create both a homepage project row and a statically generated `/work/your-slug/` page. Every project needs a unique URL-safe slug. Keep summaries and outcomes factual; omit technologies when they are not known.
-- Replace `public/ace-de-castro-resume.pdf` to update the résumé link.
+- Edit `profile.resume` in `src/content/profile.ts` to update the Google Drive résumé link. The résumé is hosted externally; no PDF is bundled with the project.
 
 The supplied CV is the source of the initial experience and project content. Update the current employer's tenure when needed; “Present” is taken from that CV.
 
