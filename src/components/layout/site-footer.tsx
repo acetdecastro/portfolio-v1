@@ -19,7 +19,7 @@ export function SiteFooter() {
               href={`mailto:${profile.email}`}
               className="text-link inline-flex items-center gap-2"
             >
-              Get in touch
+              hello@acedecastro.dev
               <ArrowUpRightIcon className="size-4" />
             </a>
 

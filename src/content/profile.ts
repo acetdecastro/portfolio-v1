@@ -4,7 +4,7 @@ export const profile = {
   name: "Ace De Castro",
   role: "Software Engineer",
   location: "Philippines",
-  email: "acetdecastro@gmail.com",
+  email: "hello@acedecastro.dev",
   description:
     "Software engineer building full-stack applications with a focus on performance, clarity, and reliability.",
   introduction:
