@@ -23,6 +23,8 @@ Open http://localhost:3000. Next.js prints the actual address if that port is al
 | `npm run dev`          | Development server with live reload           |
 | `npm run typecheck`    | Strict TypeScript validation                  |
 | `npm run build`        | Production build and static export to `out/`  |
+| `npm run preview`      | Build and preview with Cloudflare Workers     |
+| `npm run deploy`       | Build and deploy to Cloudflare Workers        |
 | `npm run format`       | Format source and configuration with Prettier |
 | `npm run format:check` | Check formatting without changing files       |
 
@@ -104,7 +106,14 @@ Server Components are the default. Add `"use client"` only to components that ne
 
 ## Deploy
 
-The project is a standard Next.js application configured for a static export. `npm run build` emits `out/`, which can be deployed to a static host. Nested routes use trailing slashes so hosts can serve their `index.html` files directly.
+The project is a Next.js static export served by Cloudflare Workers Static Assets. `npm run build` emits `out/`; `wrangler.jsonc` configures the asset directory, trailing-slash routing, and the custom 404 page. No OpenNext adapter or Worker code is needed. Run `npm run preview` to build and serve the site locally with Wrangler.
+
+For a Cloudflare Workers build, configure these dashboard commands:
+
+- Build command: `npm run build`
+- Deploy command: `npx wrangler deploy`
+
+Ensure the build installs dev dependencies so the locked Wrangler version is available. Set `NEXT_PUBLIC_SITE_URL` as a **build-time** environment variable to the public site origin before building; otherwise metadata, robots.txt, and sitemap.xml use the default URL. For a manual deployment, authenticate Wrangler and run `npm run deploy`, which builds before uploading. Static asset requests do not invoke a Worker and are available on the Free plan.
 
 For a custom domain, copy `.env.example` to `.env.local`, set `NEXT_PUBLIC_SITE_URL`, and rebuild. This updates canonical URLs, the sitemap, and social metadata.
 
